@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Products
+{% endblock %}
+
+{% block body %}
+	<h1> Products</h1>
+	<form method="post">
+		{% csrf_token %}
+		<h2> Are you sure you want to remove 
+				<li> {{ product.description }} ? </li>
+		</h2>
+		<button type="submit"> Confirm</button>
+	</form>
+	<a href="{% url 'create_products' %}">New product</a>
+{% endblock %}
